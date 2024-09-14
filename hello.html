@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heresy</title>
+    <title>Heresy</title> <!-- Update tab name -->
     <style>
         body {
             background-image: url('https://tenor.com/view/tv-static-tv-static-breh-my-brain-gif-18637587.gif'); /* TV static GIF */
@@ -17,19 +17,14 @@
             padding: 0;
         }
 
-        h1 {
-            margin-top: 20%;
-            font-size: 48px;
-            text-shadow: 2px 2px 5px #000000;
-        }
-
+        /* Remove unnecessary styling */
         #static-audio, #ambience-audio {
             display: none; /* Hide audio controls */
         }
     </style>
 </head>
 <body>
-    <!-- Audio for static sound -->
+    <!-- Audio for static sound with volume control -->
     <audio id="static-audio" autoplay loop>
         <source src="static.mp3" type="audio/mpeg"> <!-- Your static sound file -->
         Your browser does not support the audio element.
@@ -41,6 +36,10 @@
         Your browser does not support the audio element.
     </audio>
 
+    <script>
+        // JavaScript to adjust volume levels
+        document.getElementById('static-audio').volume = 0.3; // Set volume to 30%
+        document.getElementById('ambience-audio').volume = 0.7; // Set volume to 70%
+    </script>
 </body>
 </html>
-
