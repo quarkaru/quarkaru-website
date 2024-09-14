@@ -33,6 +33,27 @@
             color: #00FF00;
             font-weight: bold;
         }
+
+        /* Link styling */
+        .links {
+            margin: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background-color: #FF00FF;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 2px 2px 8px #00FFFF;
+        }
+
+        .links a:hover {
+            background-color: #FF69B4;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +74,10 @@
     </div>
 
     <marquee behavior="alternate">check out all these awesome QUARKARU!</marquee>
-    
-    <a href="aboutus.html">About Us</a>  <!-- Link to the new page -->
+
+    <div class="links">
+        <a href="aboutus.html">About Us</a> <!-- Link to About Us -->
+        <a href="bible.html">The Quarkaruan Bible</a> <!-- Link to Bible -->
+    </div>
 </body>
 </html>
