@@ -6,14 +6,13 @@
     <title>About QUARKARU</title>
     <style>
         body {
-            background-image: url('quarkaru.jpg'); /* Add your background image */
+            background-image: url('bg-image.jpg'); /* Add your background image */
             background-repeat: repeat;
             background-color: #000000; /* Fallback color for the background */
             color: #FF00FF;
             font-family: 'Comic Sans MS', sans-serif;
             text-align: center;
             padding: 50px;
-            overflow: hidden; /* To prevent overflow of GIFs */
         }
 
         h1 {
@@ -35,6 +34,7 @@
             width: 100px;
             height: 100%;
             overflow: hidden;
+            z-index: 10; /* Ensure it stays on top */
         }
 
         .left-gifs {
@@ -48,16 +48,16 @@
         .scrolling-gifs img {
             width: 100%;
             display: block;
-            animation: scroll 10s linear infinite;
+            animation: scroll 5s linear infinite; /* Adjusted speed of the scroll */
         }
 
-        /* Scroll animation */
+        /* Scroll animation: Starts higher and loops more quickly */
         @keyframes scroll {
             0% {
-                transform: translateY(100%);
+                transform: translateY(-100%); /* Start outside of the top of the screen */
             }
             100% {
-                transform: translateY(-100%);
+                transform: translateY(100%); /* End outside of the bottom of the screen */
             }
         }
     </style>
@@ -94,4 +94,3 @@
     </p>
 </body>
 </html>
-
