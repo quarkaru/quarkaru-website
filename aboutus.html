@@ -6,7 +6,7 @@
     <title>About QUARKARU</title>
     <style>
         body {
-            background-image: url('quarkaru.jpg'); /* Add your background image */
+            background-image: url('bg-image.jpg'); /* Replace with your image file */
             background-repeat: repeat;
             background-color: #000000; /* Fallback color for the background */
             color: #FF00FF;
@@ -49,7 +49,7 @@
         .scrolling-gifs img {
             width: 100%;
             display: block;
-            animation: scroll 5s linear infinite;
+            animation: scroll 10s linear infinite;
         }
 
         /* Scroll animation */
@@ -68,6 +68,25 @@
             overflow-y: auto; /* Enable vertical scrolling */
         }
 
+        /* Styling for the back-to-home button */
+        .back-to-home {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #FF00FF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #FF00FF;
+            border-radius: 5px;
+            background-color: #000000;
+        }
+
+        .back-to-home:hover {
+            background-color: #FF00FF;
+            color: #000000;
+        }
+
+        /* Styling for clickable GIFs */
         .clickable-gif {
             cursor: pointer;
         }
@@ -75,11 +94,15 @@
 </head>
 <body>
     <div class="scrolling-gifs left-gifs">
-        <img src="https://tenor.com/view/emesis-blue-tf2-soldier-jane-doe-team-fortress-2-gif-8947040247937051019.gif" alt="GIF" class="clickable-gif" onclick="window.location.href='hello.html'">
+        <img src="https://tenor.com/view/emesis-blue-tf2-soldier-jane-doe-team-fortress-2-gif-8947040247937051019.gif" alt="GIF">
+        <img src="https://tenor.com/view/desert-opium-birds-erosion-bird-opium-bird-discord-reaction-memes-2023-gif-10075181253544818284.gif" alt="GIF">
+        <img src="https://tenor.com/view/yodiefamily-gif-27107223.gif" alt="GIF">
     </div>
 
     <div class="scrolling-gifs right-gifs">
-        <img src="https://tenor.com/view/markiplier-markiplier-dance-markiplier-pirate-dance-a-heist-with-markiplier-jerma985-gif-25346053.gif" alt="GIF">
+        <img src="https://tenor.com/view/markiplier-markiplier-dance-markiplier-pirate-dance-a-heist-with-markiplier-jerma985-gif-25346053.gif" alt="GIF" class="clickable-gif" onclick="window.location.href='hello.html';">
+        <img src="https://tenor.com/view/desert-opium-birds-erosion-bird-opium-bird-discord-reaction-memes-2023-gif-10075181253544818284.gif" alt="GIF">
+        <img src="https://tenor.com/view/hiaesopily-gif-15410069701571622420.gif" alt="GIF">
     </div>
 
     <h1>the holly quarkaru savior</h1>
@@ -99,5 +122,18 @@
         quarkaru has saved us, quarkaru will continue to quark us, for in the quark we are one.<br><br>
         all hail quarkaru! all hail the quark!
     </p>
+
+    <a class="back-to-home" href="index.html">Back to Home</a> <!-- Link to the home page -->
+
+    <!-- Audio for faint background music -->
+    <audio id="background-music" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg"> <!-- Your faint background music file -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // JavaScript to adjust volume level
+        document.getElementById('background-music').volume = 0.4; // Set volume to 20%
+    </script>
 </body>
 </html>
