@@ -31,8 +31,8 @@
         .scrolling-gifs {
             position: fixed;
             top: 0;
+            bottom: 0;
             width: 100px;
-            height: 100%;
             overflow: hidden;
             z-index: 10; /* Ensure it stays on top */
         }
@@ -45,34 +45,41 @@
             right: 0;
         }
 
+        /* Stack the images vertically and scroll them smoothly */
         .scrolling-gifs img {
             width: 100%;
             display: block;
-            animation: scroll 5s linear infinite; /* Adjusted speed of the scroll */
+            animation: scroll 10s linear infinite;
         }
 
-        /* Scroll animation: Starts higher and loops more quickly */
+        /* Scroll animation */
         @keyframes scroll {
             0% {
-                transform: translateY(-100%); /* Start outside of the top of the screen */
+                transform: translateY(-100%); /* Start just above the container */
             }
             100% {
-                transform: translateY(100%); /* End outside of the bottom of the screen */
+                transform: translateY(100%); /* Scroll through to the bottom */
             }
+        }
+
+        /* Ensure the page content can scroll */
+        html, body {
+            height: 100%;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
     </style>
 </head>
 <body>
     <div class="scrolling-gifs left-gifs">
-        <img src="https://tenor.com/view/i-love-you-rats-weird-core-gif-22347274.gif" alt="GIF">
-        <img src="https://tenor.com/view/mood-gif-19953994.gif" alt="GIF">
-        <img src="https://tenor.com/view/cute-basement-basement-eyes-eyes-blush-eyes-basement-gif-20115977.gif" alt="GIF">
+        <img src="https://tenor.com/view/emesis-blue-tf2-soldier-jane-doe-team-fortress-2-gif-8947040247937051019.gif" alt="GIF">
+        <img src="https://tenor.com/view/desert-opium-birds-erosion-bird-opium-bird-discord-reaction-memes-2023-gif-10075181253544818284.gif" alt="GIF">
+        <img src="https://tenor.com/view/yodiefamily-gif-27107223.gif" alt="GIF">
     </div>
 
     <div class="scrolling-gifs right-gifs">
         <img src="https://tenor.com/view/weirdcore-gif-26725852.gif" alt="GIF">
-        <img src="https://tenor.com/view/luh-calm-fit-hazbff-opium-bird-stoon-gif-3957809579245532765.gif" alt="GIF">
-        <img src="https://tenor.com/view/splendid-ledraps-splendid-ledraps-be-careful-what-you-wish-for-careful-gif-7204171029881060619.gif" alt="GIF">
+        <img src="https://tenor.com/view/desert-opium-birds-erosion-bird-opium-bird-discord-reaction-memes-2023-gif-10075181253544818284.gif" alt="GIF">
+        <img src="https://tenor.com/view/hiaesopily-gif-15410069701571622420.gif" alt="GIF">
     </div>
 
     <h1>the holly quarkaru savior</h1>
