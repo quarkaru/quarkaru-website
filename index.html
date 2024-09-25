@@ -102,9 +102,9 @@
         <div class="grass"></div>
     </div>
 
-    <!-- MIDI Music -->
-    <audio id="midi-music" autoplay loop>
-        <source src="music.midi" type="audio/midi"> <!-- MIDI file in the directory -->
+    <!-- MP3 Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="home.mp3" type="audio/mpeg"> <!-- Replace with your MP3 file -->
         Your browser does not support the audio element.
     </audio>
 
@@ -129,6 +129,9 @@
         // Event listeners for triggering the transition
         document.addEventListener('click', triggerTransition);
         document.addEventListener('keydown', triggerTransition);
+
+        // Adjust the music volume if needed
+        document.getElementById('background-music').volume = 0.3; // Set volume to 30%
     </script>
 </body>
 </html>
