@@ -10,30 +10,100 @@
             overflow: hidden;
             margin: 0;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
 
-        .grass {
-            background-image: url('grass.png'); /* Ensure this path matches your grass PNG */
+        /* Foreground container */
+        .foreground {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Centered house */
+        #hillc {
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .clickable {
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+        }
+
+        /* Grass foreground */
+        #hillf {
+            background-image: url('grass.png'); /* Replace with your grass PNG */
             background-repeat: repeat-x;
             position: absolute;
             bottom: 0;
             width: 100%;
             height: 100px;
+            z-index: 1;
         }
 
-        .house {
-            background-image: url('house.png'); /* Ensure this path matches your house PNG */
-            position: absolute;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 64px; /* Set size to make the house more visible */
-            height: 64px;
-        }
-
+        /* Title styling */
         h1 {
             position: absolute;
             top: 50px;
             width: 100%;
             text-align: center;
-            font-size: 48px
+            font-size: 48px;
+            color: #FFFF00;
+            text-shadow: 2px 2px #FF0000;
+            animation: glow 1s infinite alternate;
+            z-index: 3;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px #FF0000, 0 0 10px #FF0000, 0 0 20px #FF0000;
+            }
+            to {
+                text-shadow: 2px 2px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
+            }
+        }
+
+        /* Zoom effect for house */
+        @keyframes zoom {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            100% {
+                transform: translateX(-50%) scale(4); /* Zooms in */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Title of the page -->
+    <h1>QUARKARU</h1>
+
+    <!-- Foreground container -->
+    <div class="foreground">
+        <div id="hillf"></div> <!-- Grass layer -->
+        <div id="hillc">
+            <span id="xxxhxxxsxxx">
+                <img src="house.png" class="clickable" alt="House"> <!-- House image -->
+            </span>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="home.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const music = document.getElementById("background-music");
+        music.volume = 0.5; // Adjust the volume level
+
+       
