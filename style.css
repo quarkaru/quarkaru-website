@@ -9,9 +9,6 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .background {
@@ -19,30 +16,48 @@ body {
     width: 100%;
     height: 100%;
     background-color: black;
+    z-index: -1;
+}
+
+.text-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out lines vertically */
+    overflow: hidden;
+}
+
+.orange-text, .white-text {
+    font-size: 5rem;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent wrapping */
+    display: flex;
+    align-items: center;
 }
 
 .orange-text {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
     color: orange;
-    font-size: 5rem;
-    font-weight: bold;
-    animation: bounce 4s infinite, scrollHorizontal 10s linear infinite;
-}
-
-.white-text {
-    position: absolute;
-    top: 30%;
-    left: 0;
-    right: 0;
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
     animation: scrollHorizontal 10s linear infinite;
 }
 
+.white-text {
+    color: white;
+    animation: scrollHorizontal 15s linear infinite; /* Different speed for white text */
+}
+
+/* Horizontal scrolling animation */
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Optional: Collage image to cover entire screen */
 .collage {
     position: absolute;
     z-index: 1;
@@ -51,12 +66,3 @@ body {
     object-fit: cover;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes scrollHorizontal {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
