@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.orange-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    color: orange;
+    font-size: 5rem;
+    font-weight: bold;
+    animation: bounce 4s infinite, scrollHorizontal 10s linear infinite;
+}
+
+.white-text {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    animation: scrollHorizontal 10s linear infinite;
+}
+
+.collage {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes scrollHorizontal {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
